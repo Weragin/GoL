@@ -1,5 +1,6 @@
 import numpy as np
 from scipy import signal
+from time import sleep
 
 board = open('data/board.txt', 'r')
 
@@ -12,6 +13,8 @@ adjacency = np.ones([3, 3])
 adjacency[1, 1] = 10
 for i in range(height):
     matrix[i] = np.array(list(map(int, board.readline().split(' '))))[:width]
+
+on = -1
 
 
 def next_generation():
@@ -27,3 +30,16 @@ def next_generation():
             else:
                 matrix[y, x] = 0
     print(matrix)
+
+
+# def turnOnOf():
+#     global on
+#     on *= -1
+#
+#
+# def simulation():
+#     global on
+#     while True:
+#         sleep(1.5)
+#         if on == 1:
+#             next_generation()
