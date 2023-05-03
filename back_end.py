@@ -14,8 +14,6 @@ adjacency[1, 1] = 10
 for i in range(height):
     matrix[i] = np.array(list(map(int, board.readline().split(' '))))[:width]
 
-on = -1
-
 
 def next_generation():
     global matrix, adjacency
@@ -29,17 +27,3 @@ def next_generation():
                 matrix[y, x] = 1
             else:
                 matrix[y, x] = 0
-    print(matrix)
-
-
-# def turnOnOf():
-#     global on
-#     on *= -1
-#
-#
-# def simulation():
-#     global on
-#     while True:
-#         sleep(1.5)
-#         if on == 1:
-#             next_generation()
